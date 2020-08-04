@@ -17,6 +17,8 @@ public class Sort {
     }
 
     public static void bubbleSort(int[] arr) {
+        if(arr.length < 2)
+            return;
         boolean notSorted = true;
         while (notSorted) {
             notSorted = false;
@@ -30,6 +32,8 @@ public class Sort {
     }
 
     public static void bubbleSort(double[] arr) {
+        if(arr.length < 2)
+            return;
         boolean notSorted = true;
         while (notSorted) {
             notSorted = false;
@@ -39,6 +43,34 @@ public class Sort {
                     notSorted = true;
                 }
             }
+        }
+    }
+
+    public static void insertionSort(int[] arr) {
+        if(arr.length < 2)
+            return;
+        int j;
+        int curr;
+        for (int i = 1; i < arr.length; i++) {
+            curr = arr[i];
+            for (j = i - 1; j >= 0 && curr < arr[j]; j--) {
+                arr[j + 1] = arr[j];
+            }
+            arr[j+1] = curr;
+        }
+    }
+
+    public static void insertionSort(double[] arr) {
+        if(arr.length < 2)
+            return;
+        int j;
+        double curr;
+        for (int i = 1; i < arr.length; i++) {
+            curr = arr[i];
+            for (j = i - 1; j >= 0 && curr < arr[j]; j--) {
+                arr[j + 1] = arr[j];
+            }
+            arr[j+1] = curr;
         }
     }
 }
