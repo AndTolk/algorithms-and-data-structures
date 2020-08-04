@@ -16,9 +16,8 @@ public class Sort {
         arr[j] = temp;
     }
 
+    //Sorts int array in ascending order using the bubble sort algorithm.
     public static void bubbleSort(int[] arr) {
-        if(arr.length < 2)
-            return;
         boolean notSorted = true;
         while (notSorted) {
             notSorted = false;
@@ -31,9 +30,8 @@ public class Sort {
         }
     }
 
+    //Sorts double array in ascending order using the bubble sort algorithm.
     public static void bubbleSort(double[] arr) {
-        if(arr.length < 2)
-            return;
         boolean notSorted = true;
         while (notSorted) {
             notSorted = false;
@@ -46,9 +44,8 @@ public class Sort {
         }
     }
 
+    //Sorts int array in ascending order using the insertion sort algorithm.
     public static void insertionSort(int[] arr) {
-        if(arr.length < 2)
-            return;
         int j;
         int curr;
         for (int i = 1; i < arr.length; i++) {
@@ -56,13 +53,12 @@ public class Sort {
             for (j = i - 1; j >= 0 && curr < arr[j]; j--) {
                 arr[j + 1] = arr[j];
             }
-            arr[j+1] = curr;
+            arr[j + 1] = curr;
         }
     }
 
+    //Sorts double array in ascending order using the insertion sort algorithm.
     public static void insertionSort(double[] arr) {
-        if(arr.length < 2)
-            return;
         int j;
         double curr;
         for (int i = 1; i < arr.length; i++) {
@@ -70,7 +66,33 @@ public class Sort {
             for (j = i - 1; j >= 0 && curr < arr[j]; j--) {
                 arr[j + 1] = arr[j];
             }
-            arr[j+1] = curr;
+            arr[j + 1] = curr;
+        }
+    }
+
+    //Sorts int array in ascending order using a selection sort algorithm.
+    public static void selectionSort(int[] arr) {
+        int min;
+        for (int i = 0; i < arr.length; i++) {
+            min = i;
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[j] < arr[min])
+                    min = j;
+            }
+            swap(arr,i,min);
+        }
+    }
+
+    //Sorts double array in ascending order using a selection sort algorithm.
+    public static void selectionSort(double[] arr) {
+        int min;
+        for (int i = 0; i <arr.length; i++) {
+            min = i;
+            for(int j = i+1; j<arr.length; j++) {
+                if(arr[j] < arr[min])
+                    min = j;
+            }
+            swap(arr,i,min);
         }
     }
 }
